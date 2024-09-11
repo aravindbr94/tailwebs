@@ -240,3 +240,23 @@ h2
 {
   margin-top: 15px;
 }
+.form-holder
+{
+  margin-block: 2px;
+}
+.mt-2 
+{
+  margin-top: 30px;
+}
+h3
+{
+  margin-bottom: 0;
+}
+span.errors {
+    text-align: center;
+    display: block;
+    padding: 16px 0;
+    font-size: 16px;
+    color: #ff0000;
+    font-weight: bold;
+}

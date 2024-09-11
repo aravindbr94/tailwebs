@@ -1,12 +1,24 @@
 <?php 
 	include_once "../conn.php";
+
+	/** Trim & sanitize data **/
+	function clean($value)
+	{
+		$value=trim($value);
+		$value=stripslashes($value);
+		$value=strip_tags($value);
+		return $value;
+	}
+
+
+	/** Insert form data **/
 	if($_POST['action']=="insertform")
 	{
 		parse_str($_POST['data'], $data);
 
-		$studentname=$data['studentname'];
-		$subject=$data['subject'];
-		$marks=$data['marks'];
+		$studentname=clean($data['studentname']);
+		$subject=clean($data['subject']);
+		$marks=clean($data['marks']);
 
 		$sql="INSERT INTO students (name, subject, marks) VALUES('$studentname', '$subject', '$marks') ON DUPLICATE KEY UPDATE marks = VALUES(marks)";
 
@@ -23,6 +35,8 @@
 		}
 		echo json_encode($data);
 	}
+
+	/** Get form data by Id**/
 	if($_POST['action']=="getdetails")
 	{
 		$id=$_POST['id'];
@@ -42,14 +56,16 @@
 		}
 		echo json_encode($data);
 	}
+
+	/** Update form data **/
 	if($_POST['action']=="updateform")
 	{
 		parse_str($_POST['data'], $data);
 
-		$id=$data['updateid'];
-		$studentname=$data['updstudentname'];
-		$subject=$data['updsubject'];
-		$marks=$data['updmarks'];
+		$id=clean($data['updateid']);
+		$studentname=clean($data['updstudentname']);
+		$subject=clean($data['updsubject']);
+		$marks=clean($data['updmarks']);
 
 		$sql="UPDATE students SET name='$studentname',subject='$subject',marks='$marks' WHERE id='$id'";
 
@@ -66,6 +82,8 @@
 		}
 		echo json_encode($data);
 	}
+
+	/** Delete form data **/
 	if($_POST['action']=="deleteform")
 	{
 		$id=$_POST['id'];

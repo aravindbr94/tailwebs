@@ -1,27 +1,6 @@
-
 <?php 
 	session_start();
 	include_once "conn.php";
-	if(isset($_POST['submit']))
-	{
-		print_r($_POST);
-		// $username=$_POST['username'];
-		// $password=$_POST['password'];
-
-		// $query="SELECT * FROM teachers where username='$username'";
-		// if(mysqli_num_rows($query)>0)
-		// {
-		// 	$row = mysqli_fetch_row($query);
-		// 	echo $row['password'];
-		// }
-		// else 
-		// {
-		// 	$error=array("error"=>"Email id does not exists.");
-		// 	echo json_encode($error);
-		// }
-	}
-	else 
-	{
 ?>
 <!DOCTYPE html>
 <html>
@@ -35,29 +14,6 @@
 		
 		<!-- STYLE CSS -->
 		<link rel="stylesheet" href="css/style.css">
-		<style type="text/css">
-			.form-holder
-			{
-				margin-block: 2px;
-			}
-			.mt-2 
-			{
-				margin-top: 30px;
-			}
-			h3
-			{
-				margin-bottom: 0;
-			}
-			span.errors {
-		    	text-align: center;
-		    	display: block;
-		   		padding: 16px 0;
-		    	font-size: 16px;
-		    	color: #ff0000;
-		    	font-weight: bold;
-			}
-		</style>
-		
 	</head>
 
 	<body>
@@ -118,6 +74,3 @@
 		</script>
 	</body>
 </html>
-<?php
-	}
-?>
