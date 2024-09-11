@@ -4,6 +4,6 @@
 3) Clone the project files into to your local system</br>
 4) Open the conn.php file and configure your db credentials
 
-<h4>Login Credentials</h4>
+<h3>Login Credentials</h3>
 <p>Username : admin</p>
 <p>Password : admin</p>
